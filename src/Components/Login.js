@@ -13,7 +13,7 @@ class Login extends React.Component {
     }
 
     componentDidMount() {
-        fetch('/users')
+        fetch('/users/')
             .then((result) => {
                 return result.json();
             })
@@ -52,7 +52,7 @@ class Login extends React.Component {
             username: this.state.username,
             password: this.state.password
         }
-        fetch('/users', {
+        fetch('/users/login', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -87,8 +87,8 @@ class Login extends React.Component {
     render() {
         return (
             <div className="row justify-content-center">
-                <div className="col-md-8">
-                    <form className="text-center border border-light p-5" action="#!">
+                <div>
+                    <form className="text-center p-5 loginFormClass" action="#!">
 
                         <p className="h4 mb-4">Sign in</p>
 
@@ -101,7 +101,7 @@ class Login extends React.Component {
                             </div>
                         </div>
 
-                        <div className="btn btn-info btn-block my-4" onClick={this.loginFunction.bind(this)}>Sign in</div>
+                        <div className="btn btn-secondary btn-block my-4" onClick={this.loginFunction.bind(this)}>Sign in</div>
 
                         <p>Not a member?
     <Link to="/register">Register</Link>

@@ -62,10 +62,8 @@ class Register extends React.Component {
     render() {
         return (
             <div className="row justify-content-center">
-                <div className="col-md-7">
-                    <div className="card">
-
-                        <h5 className="card-header bg-info text-white text-center py-4">
+                    <div className="card registerFormClass">
+                        <h5 className="card-header bg-dark text-white text-center py-4">
                             <strong>Sign up</strong>
                         </h5>
                         <br></br>
@@ -94,12 +92,11 @@ class Register extends React.Component {
                                     <input type="password" name="password" className="form-control" onChange={this.handleChange.bind(this)} value={this.state.password}></input>
                                     <label>Password</label>
                                 </div>
-                                <div className="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" onClick={this.registerFucntion.bind(this)}>Sign in</div>
+                                <div className="btn btn-outline-info btn-block my-4 waves-effect z-depth-0" onClick={this.registerFucntion.bind(this)}>Sign in</div>
                                 <Warning display={this.state.display} alertMessage={this.state.alertMessage} />
                             </form>
                         </div>
                     </div>
-                </div>
             </div>
         )
     }

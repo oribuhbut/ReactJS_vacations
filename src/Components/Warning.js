@@ -5,7 +5,7 @@ class Warning extends React.Component {
         if (this.props.display) {
             return (
                 <div>
-                    <div className="alert alert-dark" role="alert">
+                    <div className="alert alert-light" role="alert">
                         {this.props.alertMessage}
                     </div>
                 </div>

@@ -45,7 +45,20 @@ class Admin extends React.Component {
             }]
     }
 
+    // Logout 
 
+    logoutFunction() {
+        fetch('/users/logout', {
+            method: "POST"
+        })
+            .then((res) => {
+                return res.json()
+            })
+            .then((res) => {
+                console.log(res)
+                this.props.history.push('/')
+            })
+    }
 
     // Open Modal Function
 
@@ -264,14 +277,22 @@ class Admin extends React.Component {
     render() {
         return (
             <div className="container">
-                <h2 className="display-4 text-center">Admin</h2>
+                <div className="row">
+                    <div className="col-md-2 text-left">
+                        <i style={{ fontSize: '20px', padding: '10px', cursor: 'pointer',color:'white' }} onClick={this.logoutFunction.bind(this)} class="fas fa-sign-out-alt"></i>
+                    </div>
+                    <div className="col-md-8 display-4 text-center">
+                        Admin
+                    </div>
+                </div>
+
                 <div className="row justify-content-center">
                     <div className="btn btn-primary btn-block col-md-6" onClick={() => { this.state.display = true; this.setState({}) }}>add Vacation</div>
                 </div>
                 <div className="row justify-content-center">
                     <AdminAddVacation getVacations={this.getVacations} display={this.state.display} displayFunction={this.displayFunction} />
                 </div>
-                <div className="row justify-content-center">
+                <div className="chart">
                     <Chart
                         options={this.state.options}
                         series={this.state.series}

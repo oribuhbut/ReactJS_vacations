@@ -1,3 +1,13 @@
+body {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+	scrollbar-width: none;  /* Firefox */
+	background-color:rgb(46, 46, 49);
+}
+body::-webkit-scrollbar { 
+	display: none;  /* Safari and Chrome */
+	background-color:rgb(46, 46, 49);
+}
+
 .App {
   text-align: center;
 }
@@ -19,6 +29,11 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.card{
+	margin:4px;
+	border:0px;
 }
 
 .img-area{
@@ -151,8 +166,8 @@ height: fit-content;
 }
 
 .cardClass{
+  margin: 4px;
   padding: 0px;
-  margin: 3px;
 }
 .myImg {
   text-indent: -9999px;
@@ -164,3 +179,62 @@ height: fit-content;
   color:white;
   cursor: pointer;
 }
+
+.registerFormClass{
+	width: 500px;
+	height: auto;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -250px;
+	margin-left:-250px;
+	background-color:white !important ;
+	border-radius: 1rem;
+	border-left: 0 solid #8a9290;
+	transition: border-left 200ms ease-in-out;
+}
+
+.loginFormClass{
+	width: 500px;
+	height: auto;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -250px;
+	margin-left:-250px;
+	background-color:white !important ;
+	border-radius: 1rem;
+	border-left: 0 solid #8a9290;
+	transition: border-left 200ms ease-in-out;
+}
+
+.loginFormClass:hover {
+	padding-left: 3rem;
+	border-left: 3rem solid #50927c;
+  }
+
+  .loginFormClass > :first-child {
+	margin-top: 0;
+  }
+  
+  .loginFormClass > :last-child {
+	margin-bottom: 0;
+  }
+
+  .display-4{
+	  color: white;
+  }
+  
+
+  .chart{
+	width:600px;
+	background-color:rgb(223, 223, 223);
+	margin:0px auto;
+	margin-top:5px;
+	border-radius:10px;
+  }
+
+  .alert{
+	  margin: 0px !important;
+	  padding: 5px;
+  }

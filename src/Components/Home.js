@@ -2,6 +2,7 @@ import React from 'react';
 import io from 'socket.io-client';
 const socket = io('http://localhost:3001')
 
+
 class Home extends React.Component {
     constructor(props) {
         super(props)
@@ -26,7 +27,23 @@ class Home extends React.Component {
         this.checkLog()
         this.getVacations()
     }
+    // Logout 
 
+    logoutFunction() {
+        fetch('/users/logout', {
+            method: "POST"
+        })
+            .then((res) => {
+                return res.json()
+            })
+            .then((res) => {
+                console.log(res)
+                this.props.history.push('/');
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
 
     // Get Vacaction Function
 
@@ -125,8 +142,15 @@ class Home extends React.Component {
     render() {
         return (
             <div className="container">
-                <div className="col-md-12 text-center lead display-4">ObserVacation</div>
-                <div className="col-md-12 text-center lead">{this.state.titleMessage}</div>
+                <div className="row">
+                    <div class="col-md-2 text-left">
+                        <i style={{ fontSize: '20px', padding: '10px', cursor: 'pointer',color:'white' }} onClick={this.logoutFunction.bind(this)} class="fas fa-sign-out-alt"></i>
+                    </div>
+                    <div className="col-md-8 text-center lead display-4">
+                        ObserVacation
+                </div>
+                </div>
+                <div className="col-md-12 text-center lead" style={{color:'white'}}>{this.state.titleMessage}</div>
                 <div className="row justify-content-center">
                     {this.state.vacations.map((val) => {
                         if (val.userFollow) {

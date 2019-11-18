@@ -74,7 +74,7 @@ class adminAddVacation extends React.Component {
     render() {
         if (this.props.display) {
             return (
-                <div className="col-md-6">
+                <div className="col-md-6" style={{color:'white'}}>
                     <h5 className="text-center display-5">Add Vacation</h5>
                     <div className="form-group">
                         <input type="text" className="form-control" name="destination" value={this.state.destination} onChange={this.handleChange.bind(this)} placeholder="Destination"></input>

@@ -11,7 +11,7 @@ class App extends React.Component {
     return (
       <div>
         <Router>
-          <Route path="/" exact component={Login} />
+          <Route path="/" exact component={Login} history={this.props.history} />
           <Route path="/register" component={Register} />
           <Route path="/admin/" component={Admin} />
           <Route path="/home/" component={Home} />
